@@ -24,6 +24,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("midi")
 parser.add_argument('-o','--output', help='output basic script')
 parser.add_argument('-p','--serial', help='load to module')
+parser.add_argument('-l','--loop', help='loop the music',action='store_true')
 
 args = parser.parse_args()
 
@@ -63,6 +64,9 @@ for m in midifile:
 		#		print "%s%d" % (t,m.note) ,
 		#except AttributeError:
 		#	pass
+if args.loop:
+	basfile.write("%d goto 20 \n" % (basinc) )
+	
 basfile.close()
 basfile = open(args.output,"r")
 if args.serial:
@@ -72,4 +76,4 @@ if args.serial:
 	for line in basfile:
 		ser.write(line.strip()+"\n")
 		time.sleep(0.01)
-	
+
