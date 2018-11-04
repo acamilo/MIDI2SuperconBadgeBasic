@@ -10,9 +10,9 @@ Just keep pip installing things untill it stops screaming
 
 ## Usage
 ```
-python gen.py ~/Downloads/z1overw.mid -o test2.txt -p /dev/ttyUSB0 
+python gen.py ~/Downloads/z1overw.mid -o test2.txt -p /dev/ttyUSB0 -l
 
-usage: gen.py [-h] [-o OUTPUT] [-p SERIAL] midi
+usage: gen.py [-h] [-o OUTPUT] [-p SERIAL] [-l] midi
 
 positional arguments:
   midi
@@ -23,6 +23,8 @@ optional arguments:
                         output basic script
   -p SERIAL, --serial SERIAL
                         load to module
+  -l, --loop            loop the music
+
 ```
 
 ## Notes
