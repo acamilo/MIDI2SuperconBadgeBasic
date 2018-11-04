@@ -3,6 +3,7 @@ import argparse
 import os
 from mido import MidiFile
 import serial
+import time
 
 basinc = 0 
 def arr2bas(ar,dur):
@@ -13,6 +14,8 @@ def arr2bas(ar,dur):
 	n0,n1,n2 = a
 	global basinc
 	basinc+=10
+	if dur==0:
+		return ''
 	basline = "%s tune %d,%d,%d,%d\n"%(basinc,n0,n1,n2,int(dur*1000))
 	return basline
 
@@ -68,4 +71,5 @@ if args.serial:
 	ser = serial.Serial(args.serial,19200)
 	for line in basfile:
 		ser.write(line.strip()+"\n")
+		time.sleep(0.01)
 	
