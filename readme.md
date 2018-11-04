@@ -29,8 +29,7 @@ optional arguments:
 
 ## Notes
 Ok so this thing is kinda hacky.
-It easily generates more data then the badge can handle if the midi file has many notes in rapid succession. 
-Additionally, it'll truncate the maximum notes that can be played at once to 3 which causes some songs to sound wierd..
+It'll truncate the maximum notes that can be played at once to 3 which causes some songs to sound wierd..
 The loading feature was added because the badge hates Carrage Returns and you need to only send it line feeds.
 
 ## Where to find midis
