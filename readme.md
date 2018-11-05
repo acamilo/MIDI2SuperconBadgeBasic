@@ -10,9 +10,9 @@ Just keep pip installing things untill it stops screaming
 
 ## Usage
 ```
-python gen.py ~/Downloads/z1overw.mid -o test2.txt -p /dev/ttyUSB0 
+python gen.py ~/Downloads/z1overw.mid -o test2.txt -p /dev/ttyUSB0 -l
 
-usage: gen.py [-h] [-o OUTPUT] [-p SERIAL] midi
+usage: gen.py [-h] [-o OUTPUT] [-p SERIAL] [-l] midi
 
 positional arguments:
   midi
@@ -23,10 +23,14 @@ optional arguments:
                         output basic script
   -p SERIAL, --serial SERIAL
                         load to module
+  -l, --loop            loop the music
+
 ```
 
 ## Notes
-Ok so this thing is kinda hacky. It easily generates more data then the badge can handle if the midi file has many notes in rapid succession. Additionally, it'll truncate the maximum notes that can be played at once to 3 which causes soem songs to sound wierd.. The loading feature was added because the badge hates Carrage Returns and you need to only send it line feeds.
+Ok so this thing is kinda hacky.
+It'll truncate the maximum notes that can be played at once to 3 which causes some songs to sound wierd..
+The loading feature was added because the badge hates Carrage Returns and you need to only send it line feeds.
 
 ## Where to find midis
 I found some good ones here. https://www.vgmusic.com/music/console/nintendo/gameboy/
