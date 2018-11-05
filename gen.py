@@ -25,6 +25,7 @@ parser.add_argument("midi")
 parser.add_argument('-o','--output', help='output basic script')
 parser.add_argument('-p','--serial', help='load to module')
 parser.add_argument('-l','--loop', help='loop the music',action='store_true')
+parser.add_argument('-b','--baud', help='baudrate', default='19200')
 
 args = parser.parse_args()
 
@@ -72,7 +73,7 @@ basfile = open(args.output,"r")
 if args.serial:
 	print "Run sload on board"
 	raw_input("press enter when ready")
-	ser = serial.Serial(args.serial,19200)
+	ser = serial.Serial(args.serial,int(args.baud))
 	for line in basfile:
 		ser.write(line.strip()+"\n")
 		time.sleep(0.01)
